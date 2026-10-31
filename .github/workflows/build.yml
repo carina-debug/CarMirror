@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - *.zip
-
+      - "*.zip"
 jobs:
   build:
     runs-on: ubuntu-latest
