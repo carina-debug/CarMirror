@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - CarMirror.zip
+      - *.zip
 
 jobs:
   build:
@@ -13,7 +13,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Zip'ten çıkar
-        run: unzip -q CarMirror.zip
+        run: |
+          ls -la
+          unzip -q "$(ls *.zip | head -n 1)"
 
       - uses: actions/setup-java@v4
         with:
